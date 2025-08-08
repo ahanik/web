@@ -7,11 +7,14 @@
     <title>SnacksLab POS</title>
 
     <!-- PWA Manifest and Service Worker -->
+    <!-- This links your web app manifest file -->
     <link rel="manifest" href="manifest.json" />
+    <!-- This script registers your service worker -->
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js')
+                // Registering the service worker with a simple relative path
+                navigator.serviceWorker.register('service-worker.js')
                     .then(registration => {
                         console.log('Service Worker registered! Scope is:', registration.scope);
                     })
